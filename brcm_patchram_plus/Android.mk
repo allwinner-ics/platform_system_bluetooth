@@ -8,7 +8,11 @@ LOCAL_PATH:= $(call my-dir)
 
 include $(CLEAR_VARS)
 
+ifeq ($(SW_BOARD_HAVE_BLUETOOTH_NAME), hwmw269v2)
+LOCAL_SRC_FILES := brcm_patchram_plus_huawei.c
+else
 LOCAL_SRC_FILES := brcm_patchram_plus.c
+endif
 
 LOCAL_MODULE := brcm_patchram_plus
 

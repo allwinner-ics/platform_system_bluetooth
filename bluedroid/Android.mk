@@ -6,6 +6,10 @@ LOCAL_PATH:= $(call my-dir)
 
 include $(CLEAR_VARS)
 
+ifeq ($(BOARD_HAVE_BLUETOOTH_CSR),true)
+LOCAL_CFLAGS:= -DBOARD_HAVE_BLUETOOTH_CSR
+endif
+
 LOCAL_SRC_FILES := \
 	bluetooth.c
 
